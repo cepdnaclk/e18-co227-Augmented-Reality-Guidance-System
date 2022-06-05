@@ -1,5 +1,5 @@
 ___
-# DELETE THIS INSTRUCTIONS AND ADD A SHORT INTRODUCTION ABOUT YOUR PROJECT
+# CO227 Computer Engineering Project - Augemented Reality Guidance System
 ___
 
 ## Please refer the instructions in below URL:
