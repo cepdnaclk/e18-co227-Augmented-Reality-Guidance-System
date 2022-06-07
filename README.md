@@ -1,3 +1,3 @@
 ___
-# CO227 Computer Engineering Project - Augemented Reality Guidance System
+# CO227 Computer Engineering Project - Augmented Reality Guidance System
 ___
