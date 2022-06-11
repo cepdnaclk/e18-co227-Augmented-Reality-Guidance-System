@@ -22,17 +22,10 @@
             "email": "nuwanjaliyagoda@eng.pdn.ac.lk"
         },
         {
-            "name": "Supervisor 2",
-            "email": "email@eng.pdn.ac.lk"
+            "name": "Dilshani Karunarathna",
+            "email": "dilshanik@eng.pdn.ac.lk"
         }
     ],
-    "publications": [
-        {
-            "title": "Paper Title",
-            "authors": "Person1, Person2, ...",
-            "venue": "Journal or Conference Name",
-            "doi": "#",
-        }
-    ],
-    "tags": ["Web", "Embedded Systems"]
+   
+    "tags": ["Web", "AR"]
 }
