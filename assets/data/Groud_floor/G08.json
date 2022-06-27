@@ -1,0 +1,12 @@
+{
+    "room_id":"G-08",
+    "name":"Open Lab",
+    "floor_no":"Ground",
+    "capacity":"30-40 students",
+    "person_in_charge":"Mr.ABC",
+    "features":[ "whiteboards", "facilities for using laptops"],
+    "staff_id":["ABCr","XYZj"],
+    "additional_notes":"To be used by students for group-work, tech talks, etc.. After Hours access through G-11 .",
+    "tags": [ "lab" ]
+        
+}
