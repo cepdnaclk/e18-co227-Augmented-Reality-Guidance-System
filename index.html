@@ -10,6 +10,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
   </head>
 
   <body style="margin: 0px; overflow: hidden">
@@ -34,13 +35,10 @@
         cursor="fuse: false; rayOrigin: mouse;"
         id="markerA"
       >
-        <a-image
-          src="assets/img/ar_object.png"
-          scale="1 1 1"
-          class="clickable"
-          rotation="-90 0 0"
-          gesture-handler
-        ></a-image>
+        <a-entity rotation="-90 0 0" htmlembed>
+          <h1>AR Guidance System</h1>
+          <img src="assets/img/ar_object.png" alt="image" />
+        </a-entity>
       </a-marker>
 
       <a-entity camera></a-entity>
