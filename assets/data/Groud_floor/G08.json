@@ -3,7 +3,9 @@
     "name": "Open Lab",
     "floor_no": "Ground",
     "capacity": "30-40 students",
+    "area": "100 sq. ft.",
     "person_in_charge": "Mr.ABC",
+    "link": "",
     "features": [
         "whiteboards",
         "facilities for using laptops"
