@@ -25,27 +25,21 @@
       embedded
       gesture-detector
     >
-      <!-- Input the marker and the model you want to render here -->
-      <!-- 
-        Example:
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-
-              <a-entity rotation="-90 0 0" htmlembed>
-                <h1> AR Guidance System </h1>
-                <img src="assets/img/ar_object.png" alt="image" />
-              </a-entity>
-
-            </a-marker>
-       -->
+      <a-marker
+        id="animated-marker"
+        type="pattern"
+        preset="custom"
+        url="assets/img/patterns/pattern.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+        <a-entity rotation="-90 0 0" htmlembed>
+          <h1>AR Guidance System</h1>
+          <img src="assets/img/ar_object.png" alt="image" />
+        </a-entity>
+      </a-marker>
 
       <a-entity camera></a-entity>
     </a-scene>
