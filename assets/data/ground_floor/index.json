@@ -1,0 +1,17 @@
+{
+	"id": 0,
+	"name": "Ground Floor",
+	"rooms": [
+		"Entrance Lobby, with seating area",
+		"Department Office",
+		"HoD Office",
+		"Conference Room",
+		"Central Lobby, Library, Museum",
+		"Filing Room and Storage",
+		"Staff Common Room",
+		"Open Lab-I",
+		"Open Lab-II",
+		"Open Lab Entrance Lobby",
+		"Washrooms"
+	]
+}
