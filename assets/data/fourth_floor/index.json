@@ -1,0 +1,13 @@
+{
+	"id": 4,
+	"name": "Fourth Floor",
+	"rooms": [
+		"ESCAL Computer Vision",
+		"Incubation Centre",
+		"Lecturers' Rooms",
+		"Computer Laboratory 1",
+		"Server Room",
+		"Instructors' and PG Students' Room",
+		"Washrooms"
+	]
+}

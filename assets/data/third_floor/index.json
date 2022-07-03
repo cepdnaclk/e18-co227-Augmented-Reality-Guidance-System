@@ -1,0 +1,12 @@
+{
+	"id": 3,
+	"name": "Third Floor",
+	"rooms": [
+		"Lecturers' Rooms",
+		"Instructors' and PG Students' Room",
+		"Technical Officer's Room",
+		"ESCAL Makerspace",
+		"ESCAL Makerspace - Machine Room",
+		"ESCAL Robotics"
+	]
+}

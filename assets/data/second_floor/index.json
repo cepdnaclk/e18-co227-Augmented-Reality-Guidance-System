@@ -1,0 +1,12 @@
+{
+	"id": 2,
+	"name": "Second Floor",
+	"rooms": [
+		"Hardware Laboratory",
+		"Technical Officer's Room",
+		"Instructors' and PG Students' Room",
+		"Industrial Automation Laboratory",
+		"Discussion Room",
+		"Lecturers' Rooms"
+	]
+}
