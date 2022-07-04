@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <title>AR Guidance System</title>
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@primer/css@^19.0.0/dist/primer.css"
+    />
     <link rel="stylesheet" href="assets/css/global-custom.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -13,7 +17,7 @@
     <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
   </head>
 
-  <body style="margin: 0px; overflow: hidden">
+  <body style="position: static">
     <div class="arjs-loader">
       <div>Loading, please wait...</div>
     </div>
@@ -25,6 +29,7 @@
       embedded
       gesture-detector
     >
+      <!-- Marker for a sample room (G-01) -->
       <a-marker
         id="animated-marker"
         type="pattern"
@@ -35,13 +40,46 @@
         cursor="fuse: false; rayOrigin: mouse;"
         id="markerA"
       >
-        <a-entity rotation="-90 0 0" htmlembed>
-          <h1>AR Guidance System</h1>
-          <img src="assets/img/ar_object.png" alt="image" />
+        <a-plane rotation="-90 0 0"></a-plane>
+        <a-entity
+          rotation="-90 0 0"
+          position="0 0.1 0"
+          scale="0.5 0.5 0.5"
+          htmlembed
+        >
+          <div style="width: 400px; height: 400px">
+            <h3 class="text-center mb-2">Open Lab</h3>
+
+            <p class="mb-0">Available Features:</p>
+            <div class="offset-2">
+              <ul>
+                <li>30 Computers</li>
+                <li>Oscilloscopes</li>
+                <li>Power Supplies</li>
+                <li>Signal Generators</li>
+              </ul>
+            </div>
+            <br />
+            <p>Person In Charge: <u>Mr. John Doe</u></p>
+            <p>
+              Note: To be used by students for group-work, "tech talks", etc.
+              After Hours access through G-11.
+            </p>
+            <span class="Label mr-1 Label--accent">LAB</span>
+            <span class="Label mr-1 Label--open">PUBLIC</span>
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-2 text-center">
+                <img src="assets/img/people-icon.png" alt="people-icon" />
+                <h4 class="mt--2">50-60</h4>
+              </div>
+            </div>
+          </div>
         </a-entity>
       </a-marker>
-      
-      <!-- this marker for ground floor -->
+
+      <!-- Marker for a sample floor (F-0) -->
       <a-marker
         id="animated-marker"
         type="pattern"
@@ -52,9 +90,35 @@
         cursor="fuse: false; rayOrigin: mouse;"
         id="markerA"
       >
-        <a-entity rotation="-90 0 0" htmlembed>
-          <h1>AR Guidance System</h1>
-          <img src="assets/img/sample_image.png" alt="image" />
+        <a-plane rotation="-90 0 0"></a-plane>
+        <a-entity
+          rotation="-90 0 0"
+          position="0 0.1 0"
+          scale="0.5 0.5 0.5"
+          htmlembed
+        >
+          <div style="width: 400px; height: 400px">
+            <h3 class="text-center mb-2">Ground Floor</h3>
+            <p class="mb-0">
+              You can find the following locations from this floor:
+            </p>
+            <div class="offset-2">
+              <ul>
+                <li>Entrance Lobby, with seating area</li>
+                <li>Department Office</li>
+                <li>HoD Office</li>
+                <li>Conference Room</li>
+                <li>Central Lobby, Library, Museum</li>
+                <li>Filing Room and Storage</li>
+                <li>Staff Common Room</li>
+                <li>Open Lab-I</li>
+                <li>Open Lab-II</li>
+                <li>Open Lab Entrance Lobby</li>
+                <li>Washrooms</li>
+                <br />
+              </ul>
+            </div>
+          </div>
         </a-entity>
       </a-marker>
 
