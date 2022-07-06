@@ -15,11 +15,17 @@
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+    <script src="assets/js/main.js"></script>
   </head>
 
   <body style="position: static">
     <div class="arjs-loader">
       <div>Loading, please wait...</div>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn btn-primary mr-2" id="btn-view-map" style="display: none">View Map</button>
+      <button class="btn btn-outline" id="btn-see-more" style="display: none">See more</button>
     </div>
 
     <a-scene
@@ -31,14 +37,14 @@
     >
       <!-- Marker for a sample room (G-01) -->
       <a-marker
-        id="animated-marker"
+        room-g01
         type="pattern"
         preset="custom"
         url="assets/img/patterns/pattern.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
-        id="markerA"
+        id="room-g01"
       >
         <a-plane rotation="-90 0 0"></a-plane>
         <a-entity
@@ -81,14 +87,14 @@
 
       <!-- Marker for a sample floor (F-0) -->
       <a-marker
-        id="animated-marker"
+        floor-0
         type="pattern"
         preset="custom"
         url="assets/img/patterns/ground_floor.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
-        id="markerA"
+        id="floor-0"
       >
         <a-plane rotation="-90 0 0"></a-plane>
         <a-entity
