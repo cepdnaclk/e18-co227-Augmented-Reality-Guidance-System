@@ -1,7 +1,7 @@
 {
     "room_id": "G-08",
     "name": "Open Lab",
-    "floor_no": "Ground",
+    "floor_no": "G",
     "capacity": "30-40 students",
     "area": "100 sq. ft.",
     "person_in_charge": "Mr.ABC",
@@ -10,6 +10,14 @@
         "whiteboards",
         "facilities for using laptops"
     ],
+    "accesibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": true
+    },
     "staff_ids": [
         "ABCr",
         "XYZj"
