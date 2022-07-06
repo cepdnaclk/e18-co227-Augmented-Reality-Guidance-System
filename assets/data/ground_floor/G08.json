@@ -10,7 +10,7 @@
         "whiteboards",
         "facilities for using laptops"
     ],
-    "accesibility": {
+    "accessibility": {
         "academic_staff": true,
         "instructors": true,
         "technical_officers": true,
