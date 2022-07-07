@@ -24,8 +24,16 @@
     </div>
 
     <div class="btn-container">
-      <button class="btn btn-primary mr-2" id="btn-view-map" style="display: none">View Map</button>
-      <button class="btn btn-outline" id="btn-see-more" style="display: none">See more</button>
+      <button
+        class="btn btn-primary mr-2"
+        id="btn-view-map"
+        style="display: none"
+      >
+        View Map
+      </button>
+      <button class="btn btn-outline" id="btn-see-more" style="display: none">
+        See more
+      </button>
     </div>
 
     <a-scene
@@ -126,6 +134,17 @@
             </div>
           </div>
         </a-entity>
+        <a-image
+          src="assets/img/floor_plan/ground_floor.png"
+          scale="1 1 1"
+          class="clickable"
+          id="map-ground-floor"
+          rotation="-90 0 0"
+          position="0 0.2 0"
+          visible="false"
+          gesture-handler
+        >
+        </a-image>
       </a-marker>
 
       <a-entity camera></a-entity>
