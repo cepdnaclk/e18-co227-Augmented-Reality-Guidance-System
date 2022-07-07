@@ -1,7 +1,6 @@
 AFRAME.registerComponent("floor-0", {
   init: function () {
     this.el.addEventListener("markerFound", () => {
-      // TODO: add event listner to view-map button
       $("#btn-view-map")
         .click(function () {
           $("#map-ground-floor").attr("visible", true);
