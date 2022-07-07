@@ -3,7 +3,13 @@ AFRAME.registerComponent("floor-0", {
     this.el.addEventListener("markerFound", () => {
       $("#btn-view-map")
         .click(function () {
-          $("#map-ground-floor").attr("visible", true);
+          if ($(this).text() === "Hide Map") {
+            $("#map-ground-floor").attr("visible", false);
+            $(this).text("View Map");
+          } else {
+            $("#map-ground-floor").attr("visible", true);
+            $(this).text("Hide Map");
+          }
         })
         .show();
       $("#btn-see-more")
