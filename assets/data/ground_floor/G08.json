@@ -1,14 +1,14 @@
 {
     "room_id": "G-08",
-    "name": "Open Lab",
+    "name": "Open Lab - I",
     "floor_no": "G",
-    "capacity": "30-40 students",
-    "area": "100 sq. ft.",
-    "person_in_charge": "Mr.ABC",
-    "link": "",
+    "capacity": "30-40",
+    "area": "",
+    "person_in_charge": "",
+    "link": "https://ce.pdn.ac.lk/facilities/open-lab",
     "features": [
-        "whiteboards",
-        "facilities for using laptops"
+        "Whiteboards",
+        "Facilities for using laptops"
     ],
     "accessibility": {
         "academic_staff": true,
@@ -18,12 +18,10 @@
         "postgrad_students": true,
         "guests": true
     },
-    "staff_ids": [
-        "ABCr",
-        "XYZj"
-    ],
-    "additional_notes": "To be used by students for group-work, tech talks, etc.. After Hours access through G-11 .",
+    "staff_ids": [],
+    "additional_notes": "To be used by students for group-work, tech talks etc. After hours access through G-11.",
     "tags": [
-        "lab"
+        "lab",
+        "public"
     ]
 }
