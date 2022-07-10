@@ -43,16 +43,15 @@
       embedded
       gesture-detector
     >
-      <!-- Marker for a sample room (G-01) -->
+      <!-- Marker for a sample room (G-08) -->
       <a-marker
-        room-g01
+        g_08
         type="pattern"
         preset="custom"
-        url="assets/img/patterns/G-08.patt"
+        url="assets/img/patterns/g_08.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
-        id="room-g01"
       >
         <a-plane rotation="-90 0 0"></a-plane>
         <a-entity
@@ -61,48 +60,19 @@
           scale="0.5 0.5 0.5"
           htmlembed
         >
-          <div style="width: 400px; height: 400px">
-            <h3 class="text-center mb-2">Open Lab</h3>
-
-            <p class="mb-0">Available Features:</p>
-            <div class="offset-2">
-              <ul>
-                <li>30 Computers</li>
-                <li>Oscilloscopes</li>
-                <li>Power Supplies</li>
-                <li>Signal Generators</li>
-              </ul>
-            </div>
-            <br />
-            <p>Person In Charge: <u>Mr. John Doe</u></p>
-            <p>
-              Note: To be used by students for group-work, "tech talks", etc.
-              After Hours access through G-11.
-            </p>
-            <span class="Label mr-1 Label--accent">LAB</span>
-            <span class="Label mr-1 Label--open">PUBLIC</span>
-            <br />
-            <br />
-            <div class="row">
-              <div class="col-2 text-center">
-                <img src="assets/img/people-icon.png" alt="people-icon" />
-                <h4 class="mt--2">50-60</h4>
-              </div>
-            </div>
-          </div>
+          <div style="width: 400px; height: 400px" id="g_08"></div>
         </a-entity>
       </a-marker>
 
       <!-- Marker for a sample floor (F-0) -->
       <a-marker
-        floor-0
+        ground_floor
         type="pattern"
         preset="custom"
         url="assets/img/patterns/ground_floor.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
-        id="floor-0"
       >
         <a-plane rotation="-90 0 0"></a-plane>
         <a-entity
@@ -111,34 +81,13 @@
           scale="0.5 0.5 0.5"
           htmlembed
         >
-          <div style="width: 400px; height: 400px">
-            <h3 class="text-center mb-2">Ground Floor</h3>
-            <p class="mb-0">
-              You can find the following locations from this floor:
-            </p>
-            <div class="offset-2">
-              <ul>
-                <li>Entrance Lobby, with seating area</li>
-                <li>Department Office</li>
-                <li>HoD Office</li>
-                <li>Conference Room</li>
-                <li>Central Lobby, Library, Museum</li>
-                <li>Filing Room and Storage</li>
-                <li>Staff Common Room</li>
-                <li>Open Lab-I</li>
-                <li>Open Lab-II</li>
-                <li>Open Lab Entrance Lobby</li>
-                <li>Washrooms</li>
-                <br />
-              </ul>
-            </div>
-          </div>
+          <div style="width: 400px; height: 400px" id="ground_floor"></div>
         </a-entity>
         <a-image
           src="assets/img/floor_plan/ground_floor.png"
           scale="1 1 1"
           class="clickable"
-          id="map-ground-floor"
+          id="map_ground_floor"
           rotation="-90 0 0"
           position="0 0.2 0"
           visible="false"
