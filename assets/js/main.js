@@ -40,3 +40,46 @@ AFRAME.registerComponent("room-g01", {
     });
   },
 });
+
+// read the floor class
+$(document).ready(function () {
+  $("div.floor").each(function (i, d) {
+    readFloordata(d.id);
+  });
+});
+
+async function getJson(url) {
+  try {
+    let res = await fetch(url);
+    return await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function readFloordata(url) {
+  let data = await getJson(url);
+  let rooms = "";
+
+  // read the rooms/labs
+  for (var i = 0; i < data.rooms.length; i++) {
+    rooms += "<li>" + data.rooms[i] + "</li>";
+  }
+
+  // embeded into html
+  let html = `<div style="width: 400px; height: 400px">
+  <h3 class="text-center mb-2">${data.name}</h3>
+  <p class="mb-0">
+    You can find the following locations from this floor:
+  </p>
+  <div class="offset-2">
+  <ul>
+  ${rooms}
+  <br />
+  </ul>
+  </div>
+  </div>`;
+
+  let container = document.querySelector(".floor");
+  container.innerHTML = html;
+}
