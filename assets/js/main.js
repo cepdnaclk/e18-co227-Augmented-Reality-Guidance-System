@@ -1,85 +1,165 @@
-AFRAME.registerComponent("floor-0", {
-  init: function () {
-    this.el.addEventListener("markerFound", () => {
-      $("#btn-view-map")
-        .click(function () {
-          if ($(this).text() === "Hide Map") {
-            $("#map-ground-floor").attr("visible", false);
-            $(this).text("View Map");
-          } else {
-            $("#map-ground-floor").attr("visible", true);
-            $(this).text("Hide Map");
-          }
-        })
-        .show();
-      $("#btn-see-more")
-        .click(function () {
-          window.location.href = "http://www.ce.pdn.ac.lk/";
-        })
-        .show();
-    });
-    this.el.addEventListener("markerLost", () => {
-      $("#btn-view-map").hide();
-      $("#btn-see-more").hide();
-    });
-  },
-});
+floorIds = [
+  "ground_floor",
+  "first_floor",
+  "second_floor",
+  "third_floor",
+  "fourth_floor",
+];
 
-AFRAME.registerComponent("room-g01", {
-  init: function () {
-    this.el.addEventListener("markerFound", () => {
-      $("#btn-see-more")
-        .click(function () {
-          window.location.href =
-            "http://www.ce.pdn.ac.lk/facilities/networking-lab/";
-        })
-        .show();
-    });
-    this.el.addEventListener("markerLost", () => {
-      $("#btn-see-more").hide();
-    });
-  },
-});
+roomIds = ["g_08"];
 
-// read the floor class
-$(document).ready(function () {
-  $("div.floor").each(function (i, d) {
-    readFloordata(d.id);
+// Register floor AR objects and trackers
+floorIds.forEach((id) => {
+  AFRAME.registerComponent(id, {
+    init: function () {
+      generateFloorOverlay(id);
+      this.el.addEventListener("markerFound", () => {
+        $("#btn-view-map")
+          .click(function () {
+            let mapId = "#map_" + id;
+            if ($(this).text() === "Hide Map") {
+              $(mapId).attr("visible", false);
+              $(this).text("View Map");
+            } else {
+              $(mapId).attr("visible", true);
+              $(this).text("Hide Map");
+            }
+          })
+          .show();
+        $("#btn-see-more")
+          .click(function () {
+            window.location.href = "http://www.ce.pdn.ac.lk/";
+          })
+          .show();
+      });
+      this.el.addEventListener("markerLost", () => {
+        $("#btn-view-map").hide();
+        $("#btn-see-more").hide();
+      });
+    },
   });
 });
 
-async function getJson(url) {
+// Register room AR objects and trackers
+roomIds.forEach((id) => {
+  AFRAME.registerComponent(id, {
+    init: function () {
+      generateRoomOverlay(id);
+      this.el.addEventListener("markerFound", () => {
+        $("#btn-see-more")
+          .click(function () {
+            window.location.href =
+              "http://www.ce.pdn.ac.lk/facilities/networking-lab/";
+          })
+          .show();
+      });
+      this.el.addEventListener("markerLost", () => {
+        $("#btn-see-more").hide();
+      });
+    },
+  });
+});
+
+// Get JSON data from the given URL
+async function getJsonData(url) {
   try {
-    let res = await fetch(url);
-    return await res.json();
+    let response = await fetch(url);
+    return await response.json();
   } catch (error) {
     console.log(error);
   }
 }
 
-async function readFloordata(url) {
-  let data = await getJson(url);
-  let rooms = "";
+// Generate floor AR overlay
+async function generateFloorOverlay(id) {
+  let url = "assets/data/" + id + "/index.json";
+  let floorDetails = await getJsonData(url);
 
-  // read the rooms/labs
-  for (var i = 0; i < data.rooms.length; i++) {
-    rooms += "<li>" + data.rooms[i] + "</li>";
+  let roomsList = "";
+  floorDetails.rooms.forEach((roomName) => {
+    roomsList += "<li>" + roomName + "</li>";
+  });
+
+  let floorOverlay = `
+      <h3 class="text-center mb-2">${floorDetails.name}</h3>
+      <p class="mb-0">You can find the following locations from this floor:</p>
+      <div class="offset-2">
+        <ul>${roomsList}</ul>
+        <br />
+      </div>
+  `;
+
+  $("#" + id).append(floorOverlay);
+}
+
+// Generate room AR overlay
+async function generateRoomOverlay(id) {
+  let url = retrieveRoomJsonUrl(id);
+  let roomDetails = await getJsonData(url);
+
+  let roomOverlay = `
+      <h3 class="text-center mb-2">${roomDetails.name}</h3>
+      `;
+
+  if (roomDetails.features.length > 0) {
+    let featuresList = "";
+    roomDetails.features.forEach((feature) => {
+      featuresList += "<li>" + feature + "</li>";
+    });
+    roomOverlay += `
+    <p class="mb-0">Available Features:</p>
+      <div class="offset-2">
+        <ul>
+          ${featuresList}
+        </ul>
+      </div>
+      <br />
+      `;
   }
 
-  // embeded into html
-  let html = `<div style="width: 400px; height: 400px">
-  <h3 class="text-center mb-2">${data.name}</h3>
-  <p class="mb-0">
-    You can find the following locations from this floor:
-  </p>
-  <div class="offset-2">
-  <ul>
-  ${rooms}
-  <br />
-  </ul>
-  </div>
-  </div>`;
+  roomOverlay += `<p>Person In Charge: ${
+    roomDetails.person_in_charge == "" ? "N/A" : roomDetails.person_in_charge
+  }</p>`;
 
-  let container = document.querySelector(".floor");
-  container.innerHTML = html;
+  if (roomDetails.additional_notes != "") {
+    roomOverlay += `<p>Note: ${roomDetails.additional_notes}</p>`;
+  }
+
+  if (roomDetails.tags.length > 0) {
+    roomDetails.tags.forEach((tag) => {
+      roomOverlay += `<span class="Label mr-1 Label--accent">${tag}</span>`;
+    });
+    roomOverlay += "<br />";
+  }
+
+  roomOverlay += "<br />";
+  roomOverlay += `
+    <div class="row">
+      <div class="col-2 text-center">
+        <img src="assets/img/people-icon.png" alt="people-icon" />
+        <h4 class="mt--2">${
+          roomDetails.capacity == "" ? "N/A" : roomDetails.capacity
+        }</h4>
+      </div>
+    </div>
+  `;
+
+  $("#" + id).append(roomOverlay);
+}
+
+// Retrieve room JSON URL when the room ID is given
+function retrieveRoomJsonUrl(id) {
+  if (id.charAt(0) === "g") {
+    return "assets/data/ground_floor/" + id + ".json";
+  } else if (id.charAt(0) === "1") {
+    return "assets/data/first_floor/" + id + ".json";
+  } else if (id.charAt(0) === "2") {
+    return "assets/data/second_floor/" + id + ".json";
+  } else if (id.charAt(0) === "3") {
+    return "assets/data/third_floor/" + id + ".json";
+  } else if (id.charAt(0) === "4") {
+    return "assets/data/fourth_floor/" + id + ".json";
+  } else {
+    return "";
+  }
 }
