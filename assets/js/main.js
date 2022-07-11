@@ -127,7 +127,7 @@ async function generateRoomOverlay(id) {
 
   if (roomDetails.tags.length > 0) {
     roomDetails.tags.forEach((tag) => {
-      roomOverlay += `<span class="Label mr-1 Label--accent">${tag}</span>`;
+      roomOverlay += `<span class="Label mr-1 Label--accent">${tag.toUpperCase()}</span>`;
     });
     roomOverlay += "<br />";
   }
