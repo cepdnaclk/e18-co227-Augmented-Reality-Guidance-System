@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AR Guidance System</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>AR Guidance System</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@primer/css@^19.0.0/dist/primer.css"
+    />
+    <link rel="stylesheet" href="assets/css/global-custom.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+    <script src="assets/js/main.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="https://unpkg.com/@primer/css@^19.0.0/dist/primer.css" />
-  <link rel="stylesheet" href="assets/css/global-custom.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script
-    src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-  <script
-    src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-  <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
-  <script src="assets/js/main.js"></script>
-</head>
+  <body style="position: static">
+    <div class="arjs-loader">
+      <div>Loading, please wait...</div>
+    </div>
 
-<body style="position: static">
-  <div class="arjs-loader">
-    <div>Loading, please wait...</div>
-  </div>
+    <div class="btn-container">
+      <button
+        class="btn btn-primary mr-2"
+        id="btn-view-map"
+        style="display: none"
+      >
+        View Map
+      </button>
+      <button class="btn btn-outline" id="btn-see-more" style="display: none">
+        See more
+      </button>
+    </div>
 
-  <div class="btn-container">
-    <button class="btn btn-primary mr-2" id="btn-view-map" style="display: none">
-      View Map
-    </button>
-    <button class="btn btn-outline" id="btn-see-more" style="display: none">
-      See more
-    </button>
-  </div>
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      id="scene"
+      embedded
+      gesture-detector
+    >
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
 
-  <a-scene vr-mode-ui="enabled: false;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-    id="scene" embedded gesture-detector>
-    <a-entity camera></a-entity>
-  </a-scene>
-</body>
-
-<script type="application/javascript">
-  window.addEventListener("camera-init", (event) => {
-    $(".arjs-loader").hide();
-  });
-</script>
-
+  <script type="application/javascript">
+    window.addEventListener("camera-init", (event) => {
+      $(".arjs-loader").hide();
+    });
+  </script>
 </html>
