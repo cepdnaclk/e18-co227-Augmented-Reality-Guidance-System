@@ -1,4 +1,10 @@
-floorIds = ["ground_floor"];
+floorIds = [
+  "ground_floor",
+  "first_floor",
+  "second_floor",
+  "third_floor",
+  "fourth_floor",
+];
 
 roomIds = ["g_08"];
 
@@ -169,8 +175,9 @@ async function generateRoomOverlay(id) {
       `;
   }
 
-  roomOverlay += `<p>Person In Charge: ${roomDetails.person_in_charge == "" ? "N/A" : roomDetails.person_in_charge
-    }</p>`;
+  roomOverlay += `<p>Person In Charge: ${
+    roomDetails.person_in_charge == "" ? "N/A" : roomDetails.person_in_charge
+  }</p>`;
 
   if (roomDetails.additional_notes != "") {
     roomOverlay += `<p>Note: ${roomDetails.additional_notes}</p>`;
@@ -178,7 +185,7 @@ async function generateRoomOverlay(id) {
 
   if (roomDetails.tags.length > 0) {
     roomDetails.tags.forEach((tag) => {
-      roomOverlay += `<span class="Label mr-1 Label--accent">${tag}</span>`;
+      roomOverlay += `<span class="Label mr-1 Label--accent">${tag.toUpperCase()}</span>`;
     });
     roomOverlay += "<br />";
   }
@@ -188,8 +195,9 @@ async function generateRoomOverlay(id) {
     <div class="row">
       <div class="col-2 text-center">
         <img src="assets/img/people-icon.png" alt="people-icon" />
-        <h4 class="mt--2">${roomDetails.capacity == "" ? "N/A" : roomDetails.capacity
-    }</h4>
+        <h4 class="mt--2">${
+          roomDetails.capacity == "" ? "N/A" : roomDetails.capacity
+        }</h4>
       </div>
     </div>
   `;
