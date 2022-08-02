@@ -1,108 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="">
-  <head>
-    <meta charset="UTF-8" />
-    <title>AR Guidance System</title>
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@primer/css@^19.0.0/dist/primer.css"
-    />
-    <link rel="stylesheet" href="assets/css/global-custom.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
-    <script src="assets/js/main.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>AR Guidance System</title>
 
-  <body style="position: static">
-    <div class="arjs-loader">
-      <div>Loading, please wait...</div>
-    </div>
+  <link rel="stylesheet" href="https://unpkg.com/@primer/css@^19.0.0/dist/primer.css" />
+  <link rel="stylesheet" href="assets/css/global-custom.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script
+    src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+  <script
+    src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+  <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+  <script src="assets/js/main.js"></script>
+</head>
 
-    <div class="btn-container">
-      <button
-        class="btn btn-primary mr-2"
-        id="btn-view-map"
-        style="display: none"
-      >
-        View Map
-      </button>
-      <button class="btn btn-outline" id="btn-see-more" style="display: none">
-        See more
-      </button>
-    </div>
+<body style="position: static">
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
 
-    <a-scene
-      vr-mode-ui="enabled: false;"
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-      id="scene"
-      embedded
-      gesture-detector
-    >
-      <!-- Marker for a sample room (G-08) -->
-      <a-marker
-        g_08
-        type="pattern"
-        preset="custom"
-        url="assets/img/patterns/g_08.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-      >
-        <a-plane rotation="-90 0 0"></a-plane>
-        <a-entity
-          rotation="-90 0 0"
-          position="0 0.1 0"
-          scale="0.5 0.5 0.5"
-          htmlembed
-        >
-          <div style="width: 400px; height: 400px" id="g_08"></div>
-        </a-entity>
-      </a-marker>
+  <div class="btn-container">
+    <button class="btn btn-primary mr-2" id="btn-view-map" style="display: none">
+      View Map
+    </button>
+    <button class="btn btn-outline" id="btn-see-more" style="display: none">
+      See more
+    </button>
+  </div>
 
-      <!-- Marker for a sample floor (F-0) -->
-      <a-marker
-        ground_floor
-        type="pattern"
-        preset="custom"
-        url="assets/img/patterns/ground_floor.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-      >
-        <a-plane rotation="-90 0 0"></a-plane>
-        <a-entity
-          rotation="-90 0 0"
-          position="0 0.1 0"
-          scale="0.5 0.5 0.5"
-          htmlembed
-        >
-          <div style="width: 400px; height: 400px" id="ground_floor"></div>
-        </a-entity>
-        <a-image
-          src="assets/img/floor_plan/ground_floor.png"
-          scale="1 1 1"
-          class="clickable"
-          id="map_ground_floor"
-          rotation="-90 0 0"
-          position="0 0.2 0"
-          visible="false"
-          gesture-handler
-        >
-        </a-image>
-      </a-marker>
+  <a-scene vr-mode-ui="enabled: false;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+    id="scene" embedded gesture-detector>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
 
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+<script type="application/javascript">
+  window.addEventListener("camera-init", (event) => {
+    $(".arjs-loader").hide();
+  });
+</script>
 
-  <script type="application/javascript">
-    window.addEventListener("camera-init", (event) => {
-      $(".arjs-loader").hide();
-    });
-  </script>
 </html>
