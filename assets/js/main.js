@@ -8,55 +8,113 @@ floorIds = [
 
 roomIds = ["g_08"];
 
-// Register floor AR objects and trackers
-floorIds.forEach((id) => {
-  AFRAME.registerComponent(id, {
-    init: function () {
-      generateFloorOverlay(id);
-      this.el.addEventListener("markerFound", () => {
-        $("#btn-view-map")
-          .click(function () {
-            let mapId = "#map_" + id;
-            if ($(this).text() === "Hide Map") {
-              $(mapId).attr("visible", false);
-              $(this).text("View Map");
-            } else {
-              $(mapId).attr("visible", true);
-              $(this).text("Hide Map");
-            }
-          })
-          .show();
-        $("#btn-see-more")
-          .click(function () {
-            window.location.href = "http://www.ce.pdn.ac.lk/";
-          })
-          .show();
-      });
-      this.el.addEventListener("markerLost", () => {
-        $("#btn-view-map").hide();
-        $("#btn-see-more").hide();
-      });
-    },
-  });
-});
+$(function () {
+  // Generate <a-marker> elements for all floors
+  floorIds.forEach((id) => {
+    let marker = `
+      <a-marker ${id} type="pattern" 
+        preset="custom" url="assets/img/patterns/${id}.patt" 
+        raycaster="objects: .clickable" emitevents="true" 
+        cursor="fuse: false; rayOrigin: mouse;">
 
-// Register room AR objects and trackers
-roomIds.forEach((id) => {
-  AFRAME.registerComponent(id, {
-    init: function () {
-      generateRoomOverlay(id);
-      this.el.addEventListener("markerFound", () => {
-        $("#btn-see-more")
-          .click(function () {
-            window.location.href =
-              "http://www.ce.pdn.ac.lk/facilities/networking-lab/";
-          })
-          .show();
-      });
-      this.el.addEventListener("markerLost", () => {
-        $("#btn-see-more").hide();
-      });
-    },
+        <a-plane rotation="-90 0 0"></a-plane>
+        <a-entity
+          rotation="-90 0 0"
+          position="0 0.1 0"
+          scale="0.5 0.5 0.5"
+          htmlembed
+        >
+          <div style="width: 400px; height: 400px" id="${id}"></div>
+        </a-entity>
+
+        <a-image
+            src="assets/img/floor_plan/${id}.png"
+            scale="1 1 1"
+            class="clickable"
+            id="map_${id}"
+            rotation="-90 0 0"
+            position="0 0.2 0"
+            visible="false"
+            gesture-handler
+          >
+      </a-marker>
+    `;
+    $("#scene").append(marker);
+  });
+
+  // Generate <a-marker> elements for all rooms
+  roomIds.forEach((id) => {
+    let marker = `
+      <a-marker ${id} type="pattern" 
+        preset="custom" url="assets/img/patterns/${id}.patt" 
+        raycaster="objects: .clickable" emitevents="true" 
+        cursor="fuse: false; rayOrigin: mouse;">
+
+        <a-plane rotation="-90 0 0"></a-plane>
+        <a-entity
+          rotation="-90 0 0"
+          position="0 0.1 0"
+          scale="0.5 0.5 0.5"
+          htmlembed
+        >
+          <div style="width: 400px; height: 400px" id="${id}"></div>
+        </a-entity>
+    
+      </a-marker>
+    `;
+    $("#scene").append(marker);
+  });
+
+  // Register floor AR objects and trackers
+  floorIds.forEach((id) => {
+    AFRAME.registerComponent(id, {
+      init: function () {
+        generateFloorOverlay(id);
+        this.el.addEventListener("markerFound", () => {
+          $("#btn-view-map")
+            .click(function () {
+              let mapId = "#map_" + id;
+              if ($(this).text() === "Hide Map") {
+                $(mapId).attr("visible", false);
+                $(this).text("View Map");
+              } else {
+                $(mapId).attr("visible", true);
+                $(this).text("Hide Map");
+              }
+            })
+            .show();
+          $("#btn-see-more")
+            .click(function () {
+              window.location.href = "http://www.ce.pdn.ac.lk/";
+            })
+            .show();
+        });
+        this.el.addEventListener("markerLost", () => {
+          $("#btn-view-map").hide();
+          $("#btn-see-more").hide();
+        });
+      },
+    });
+  });
+
+  // Register room AR objects and trackers
+  roomIds.forEach((id) => {
+    AFRAME.registerComponent(id, {
+      init: function () {
+        generateRoomOverlay(id);
+        this.el.addEventListener("markerFound", () => {
+          $("#btn-see-more")
+            .click(function () {
+              window.location.href =
+                "http://www.ce.pdn.ac.lk/facilities/networking-lab/";
+            })
+            .show();
+        });
+        this.el.addEventListener("markerLost", () => {
+          $("#btn-see-more").hide();
+        });
+      },
+    });
   });
 });
 
