@@ -1,0 +1,202 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1659519733.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"room_id",
+		"name",
+		"floor_no"
+	],
+	"properties": {
+		"room_id": {
+			"$id": "#root/room_id", 
+			"title": "Room_id", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"G-08"
+			],
+			"pattern": "^.*$"
+		},
+		"name": {
+			"$id": "#root/name", 
+			"title": "Name", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"Open Lab - I"
+			],
+			"pattern": "^.*$"
+		},
+		"floor_no": {
+			"$id": "#root/floor_no", 
+			"title": "Floor_no", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"G"
+			],
+			"pattern": "^.*$"
+		},
+		"capacity": {
+			"$id": "#root/capacity", 
+			"title": "Capacity", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"30-40"
+			],
+			"pattern": "^.*$"
+		},
+		"area": {
+			"$id": "#root/area", 
+			"title": "Area", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				""
+			],
+			"pattern": "^.*$"
+		},
+		"person_in_charge": {
+			"$id": "#root/person_in_charge", 
+			"title": "Person_in_charge", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				""
+			],
+			"pattern": "^.*$"
+		},
+		"link": {
+			"$id": "#root/link", 
+			"title": "Link", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"https://ce.pdn.ac.lk/facilities/open-lab"
+			],
+			"pattern": "^.*$"
+		},
+		"features": {
+			"$id": "#root/features", 
+			"title": "Features", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/features/items", 
+				"title": "Items", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"Whiteboards"
+				],
+				"pattern": "^.*$"
+			}
+		},
+		"accessibility": {
+			"$id": "#root/accessibility", 
+			"title": "Accessibility", 
+			"type": "object",
+			"required": [
+				"academic_staff",
+				"instructors",
+				"technical_officers",
+				"undergrad_students",
+				"postgrad_students",
+				"guests"
+			],
+			"properties": {
+				"academic_staff": {
+					"$id": "#root/accessibility/academic_staff", 
+					"title": "Academic_staff", 
+					"type": "boolean",
+					"examples": [
+						true
+					],
+					"default": true
+				},
+				"instructors": {
+					"$id": "#root/accessibility/instructors", 
+					"title": "Instructors", 
+					"type": "boolean",
+					"examples": [
+						true
+					],
+					"default": true
+				},
+				"technical_officers": {
+					"$id": "#root/accessibility/technical_officers", 
+					"title": "Technical_officers", 
+					"type": "boolean",
+					"examples": [
+						true
+					],
+					"default": true
+				},
+				"undergrad_students": {
+					"$id": "#root/accessibility/undergrad_students", 
+					"title": "Undergrad_students", 
+					"type": "boolean",
+					"examples": [
+						true
+					],
+					"default": true
+				},
+				"postgrad_students": {
+					"$id": "#root/accessibility/postgrad_students", 
+					"title": "Postgrad_students", 
+					"type": "boolean",
+					"examples": [
+						true
+					],
+					"default": true
+				},
+				"guests": {
+					"$id": "#root/accessibility/guests", 
+					"title": "Guests", 
+					"type": "boolean",
+					"examples": [
+						true
+					],
+					"default": true
+				}
+			}
+		}
+,
+		"staff_ids": {
+			"$id": "#root/staff_ids", 
+			"title": "Staff_ids", 
+			"type": "array",
+			"default": []
+		},
+		"additional_notes": {
+			"$id": "#root/additional_notes", 
+			"title": "Additional_notes", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"To be used by students for group-work, tech talks etc. After hours access through G-11."
+			],
+			"pattern": "^.*$"
+		},
+		"tags": {
+			"$id": "#root/tags", 
+			"title": "Tags", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/tags/items", 
+				"title": "Items", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"lab"
+				],
+				"pattern": "^.*$"
+			}
+		}
+	}
+}
