@@ -1,0 +1,28 @@
+{
+    "room_id": "2_00",
+    "name": "Hardware and Computer Interfacing Lab",
+    "floor_no": "2",
+    "capacity": "60",
+    "area": "",
+    "person_in_charge": "Mr. Kelum Gunarathne",
+    "link": "https://ce.pdn.ac.lk/facilities/hardware-and-interfacing-lab/",
+    "features": [
+        "30 Computers", 
+        "Oscilloscopes",
+        "Power Supplies", 
+        "Signal Generators"
+    ],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": false,
+        "postgrad_students": false,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "To be used for Digital Design, Embedded Systems and other courses.",
+    "tags": [
+        "lab"
+    ]
+}

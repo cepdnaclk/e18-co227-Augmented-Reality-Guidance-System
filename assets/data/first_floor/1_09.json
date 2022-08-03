@@ -1,0 +1,26 @@
+{
+    "room_id": "1_09",
+    "name": "Network and Communication Laboratory",
+    "floor_no": "1",
+    "capacity": "30",
+    "area": "",
+    "person_in_charge": "",
+    "link": "https://ce.pdn.ac.lk/facilities/networking-lab",
+    "features": [
+        "Computers", 
+        "Networking Devices"
+    ],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "To be used for Networking related courses.",
+    "tags": [
+        "lab"
+    ]
+}
