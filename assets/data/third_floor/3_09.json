@@ -1,0 +1,25 @@
+{
+    "room_id": "03-08",
+    "name": "ESCAL Makerspace - Machine Room",
+    "floor_no": "3",
+    "capacity": "4",
+    "area": "",
+    "person_in_charge": "",
+    "link": "https://ce.pdn.ac.lk/facilities/makerspace",
+    "features": [
+        "MakerSpace Heavy Machinery Works"
+    ],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        "lab"
+    ]
+}

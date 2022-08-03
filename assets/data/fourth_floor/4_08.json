@@ -1,0 +1,25 @@
+{
+    "room_id": "04-08",
+    "name": "Computer Laboratory 1",
+    "floor_no": "4",
+    "capacity": "70",
+    "area": "",
+    "person_in_charge": "",
+    "link": "https://ce.pdn.ac.lk/facilities/main-computer-lab",
+    "features": [
+        "Multimedia Projector"
+    ],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        "lab"
+    ]
+}

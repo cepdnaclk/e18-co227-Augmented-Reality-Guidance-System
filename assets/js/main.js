@@ -6,7 +6,7 @@ floorIds = [
   "fourth_floor",
 ];
 
-roomIds = ["g_08"];
+roomIds = ["g_08","1_09","2_00"];
 
 $(function () {
   // Generate <a-marker> elements for all floors
