@@ -124,15 +124,35 @@ After identifying the list of users and their requirements, the design of the so
 
 <img width="1106" alt="Architecture Diagram Example - Multiplayer (Community) (2)" src="https://user-images.githubusercontent.com/27498587/172439142-444b7346-40ea-4082-b561-8d2cd5627412.png">
 
+### Marker Designs
+
+* Floor marker
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/27498587/182695248-47ebd526-cf6c-410e-ba26-cbba6971f368.png">
+
+* Room marker
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/27498587/182695219-199a12c3-004a-4a8f-ac80-6a1add258fbc.png">
+
+### AR Overlay Designs
+
+* Floor AR Overlay
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/27498587/182695956-ff508a8a-81b2-4ed7-96e8-2298c6c79c95.png">
+
+* Room AR Overlay
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/27498587/182696125-caf7983d-6d05-4e85-8040-bf11c95b533a.png">
+
+
 ### Technology Stack
 
 1. HTML/CSS/JavaScript (Used for creating and styling the web application)
-2. ThreeJS (Used for rendering 3D objects)
-3. ArJS (Used as the augmented reality library.)
+2. [JQuery](https://jquery.com/)      -  Simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation 
+3. [ThreeJS](https://threejs.org/) (Used for rendering 3D objects)
+4. [ArJS](https://ar-js-org.github.io/) (Used as the augmented reality library.)
     * Very Fast: It runs efficiently even on phones
     * Web-based: It is a pure web solution, so no installation is required. Fully javascript based, using three.js + A-Frame + jsartoolkit5
     * Open Source: It is completely open-source and free of charge!
     * Standards: It works on any phone with [webgl](http://caniuse.com/#feat=webgl) and [webrtc](http://caniuse.com/#feat=stream)
+5. [AFrame](https://aframe.io/) - Used for creating 3d objects 
+6. [aframe-htmlembed-component](https://github.com/supereggbert/aframe-htmlembed-component) - Used for embedding html content in AFrame
 
 ## Links
 
