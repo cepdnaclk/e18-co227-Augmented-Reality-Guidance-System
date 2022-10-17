@@ -1,0 +1,23 @@
+{
+    "room_id": "g_04",
+    "name": "Central Lobby, Library, Museum",
+    "floor_no": "G",
+    "capacity": "N/A",
+    "area": "",
+    "person_in_charge": "",
+    "link": "",
+    "features": [],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": true
+    },
+    "staff_ids": [],
+    "additional_notes": "This is a transit area",
+    "tags": [
+        "public"
+    ]
+}

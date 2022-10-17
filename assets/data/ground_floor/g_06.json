@@ -1,0 +1,23 @@
+{
+    "room_id": "g_06",
+    "name": "Staff Common Room",
+    "floor_no": "G",
+    "capacity": "",
+    "area": "",
+    "person_in_charge": "",
+    "link": "",
+    "features": [],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": false,
+        "postgrad_students": false,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "Currently used by TOs",
+    "tags": [
+        "staff"
+    ]
+}
