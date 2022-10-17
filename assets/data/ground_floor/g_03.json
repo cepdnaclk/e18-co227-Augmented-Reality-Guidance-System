@@ -1,0 +1,27 @@
+{
+    "room_id": "g_03",
+    "name": "Conference Room",
+    "floor_no": "G",
+    "capacity": "15",
+    "area": "",
+    "person_in_charge": "",
+    "link": "https://ce.pdn.ac.lk/facilities/conference-room/",
+    "features": [
+        "Smart Display",
+        "Conference Camera",
+        "Conference Mic"
+    ],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": true
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        "public"
+    ]
+}
