@@ -1,0 +1,23 @@
+{
+    "room_id": "g_11",
+    "name": "Open Lab Entrance Lobby",
+    "floor_no": "G",
+    "capacity": "N/A",
+    "area": "",
+    "person_in_charge": "",
+    "link": "https://ce.pdn.ac.lk/facilities/open-lab",
+    "features": [
+    ],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": true
+    },
+    "staff_ids": [],
+    "additional_notes": "Providing after hours access to G-08 and G-09",
+    "tags": [
+    ]
+}
