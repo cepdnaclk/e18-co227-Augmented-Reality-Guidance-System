@@ -1,0 +1,23 @@
+{
+    "room_id": "1_01",
+    "name": "Technical Officer's Room",
+    "floor_no": "1",
+    "capacity": "2",
+    "area": "",
+    "person_in_charge": "",
+    "link": "",
+    "features": [],
+    "accessibility": {
+        "academic_staff": false,
+        "instructors": false,
+        "technical_officers": true,
+        "undergrad_students": false,
+        "postgrad_students": false,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        "staff"
+    ]
+}
