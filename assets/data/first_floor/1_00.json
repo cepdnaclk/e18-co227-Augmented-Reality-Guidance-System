@@ -1,15 +1,13 @@
 {
-    "room_id": "g_03",
-    "name": "Conference Room",
-    "floor_no": "G",
-    "capacity": "15",
+    "room_id": "1_00",
+    "name": "Computer Laboratory 2",
+    "floor_no": "1",
+    "capacity": "64",
     "area": "",
     "person_in_charge": "",
-    "link": "https://ce.pdn.ac.lk/facilities/conference-room/",
+    "link": "",
     "features": [
-        "Smart Display",
-        "Conference Camera",
-        "Conference Mic"
+        "2 built in projectors and screens 64 computers"
     ],
     "accessibility": {
         "academic_staff": true,
@@ -17,11 +15,11 @@
         "technical_officers": true,
         "undergrad_students": true,
         "postgrad_students": true,
-        "guests": true
+        "guests": false
     },
     "staff_ids": [],
     "additional_notes": "",
     "tags": [
-        "public"
+        "lab"
     ]
 }
