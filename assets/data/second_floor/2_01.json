@@ -1,0 +1,25 @@
+{
+    "room_id": "2_01",
+    "name": "Technical Officer's Room",
+    "floor_no": "2",
+    "capacity": "1",
+    "area": "",
+    "person_in_charge": "Mr. Kelum Gunarathne",
+    "link": "",
+    "features": [
+        "Hardware component storage"
+    ],
+    "accessibility": {
+        "academic_staff": false,
+        "instructors": false,
+        "technical_officers": true,
+        "undergrad_students": false,
+        "postgrad_students": false,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        "staff"
+    ]
+}
