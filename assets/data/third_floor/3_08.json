@@ -1,0 +1,26 @@
+{
+    "room_id": "3_08",
+    "name": "ESCAL Makerspace Lab",
+    "floor_no": "3",
+    "capacity": "20",
+    "area": "",
+    "person_in_charge": "",
+    "link": "https://ce.pdn.ac.lk/facilities/makerspace",
+    "features": [
+        "5 Working Stations",
+        "Fabrication facilities"
+    ],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        "lab"
+    ]
+}

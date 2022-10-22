@@ -1,0 +1,25 @@
+{
+    "room_id": "3_06",
+    "name": "Instructors and PG Students' Room",
+    "floor_no": "3",
+    "capacity": "6",
+    "area": "",
+    "person_in_charge": "",
+    "link": "",
+    "features": [
+        "Working space and storage"
+    ],
+    "accessibility": {
+        "academic_staff": false,
+        "instructors": true,
+        "technical_officers": false,
+        "undergrad_students": false,
+        "postgrad_students": true,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        "staff"
+    ]
+}
