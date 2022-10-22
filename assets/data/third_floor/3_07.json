@@ -1,0 +1,25 @@
+{
+    "room_id": "3_07",
+    "name": "Technical Officer's Room",
+    "floor_no": "3",
+    "capacity": "3",
+    "area": "",
+    "person_in_charge": "Mr. Wasundara",
+    "link": "",
+    "features": [
+        "Additionally used as material storage"
+    ],
+    "accessibility": {
+        "academic_staff": false,
+        "instructors": false,
+        "technical_officers": true,
+        "undergrad_students": false,
+        "postgrad_students": false,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        ""
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "room_id": "3_10",
+    "name": "ESCAL Robotics Lab",
+    "floor_no": "3",
+    "capacity": "12",
+    "area": "",
+    "person_in_charge": "",
+    "link": "https://ce.pdn.ac.lk/facilities/robotics-lab",
+    "features": [
+        "Robotics related works"
+    ],
+    "accessibility": {
+        "academic_staff": true,
+        "instructors": true,
+        "technical_officers": true,
+        "undergrad_students": true,
+        "postgrad_students": true,
+        "guests": false
+    },
+    "staff_ids": [],
+    "additional_notes": "",
+    "tags": [
+        "lab"
+    ]
+}
